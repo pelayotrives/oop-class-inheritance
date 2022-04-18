@@ -66,13 +66,13 @@ class Teacher {
 
     printStudents = () => {
         this.students.forEach( (eachElement, indexElement) => {
-            console.log(eachElement.name);
+            console.log(`Student number ${indexElement + 1}: ${eachElement.name}.`);
         })
         }
 
     findStudent = (nameParam) => {
-        const estudiante = this.students.find(estudiante => estudiante.name === nameParam);
-        if (!estudiante) {
+        const estudiante = this.students.find(estudianteConcreto => estudianteConcreto.name === nameParam); // Cómo usar metodo que precisa de callback en línea asignado a variable.
+        if (!estudiante) { // Se traduce a not estudiante, que implica false, que implica que no existe.
             return "Student not found.";
         } else {
             if (estudiante.isAvailable === true) {
